@@ -39,7 +39,8 @@ public class SimulationServiceSimpleTest {
         Ride ride4 = new Ride(4, new Position(0, 8), new Position(0, 9), 0, 6);
 
         List<Ride> rides = new ArrayList<>(Arrays.asList(ride1, ride4, ride2, ride3));
-        Map<Long, List<Ride>> map = new SimulationServiceSimple().simulate(new Rules(2, 2, 10), rides);
+        Rules rules = new Rules(0, 0, 2, 0, 2, 10);
+        Map<Long, List<Ride>> map = new SimulationServiceSimple().simulate(rules, rides);
         map.forEach((k, v) -> System.out.println(k + "   " + v));
     }
 }

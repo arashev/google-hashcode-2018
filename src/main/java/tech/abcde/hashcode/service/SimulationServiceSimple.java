@@ -15,7 +15,7 @@ public class SimulationServiceSimple implements SimulatorService {
     public Map<Long, List<Ride>> simulate(Rules rules, List<Ride> allRides) {
         long vehicle = 0;
         Map<Long, List<Ride>> result = new HashMap<>();
-        while (vehicle++ < rules.vehicleNumber) {
+        while (vehicle++ < rules.vehiclesAmount) {
             List<Ride> rides = new ArrayList<>();
             long time = 0;
             Position position = new Position(0, 0);
