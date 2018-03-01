@@ -5,9 +5,14 @@ import tech.abcde.hashcode.model.Rules;
 
 import java.nio.file.Path;
 import java.util.List;
+import java.util.Map;
 
 public interface FileParserService {
-	Rules parseRules(Path filePath);
+	String SEPARATOR = " ";
 
-	List<Ride> parseRides(Path filePath);
+	Rules readRules(Path filePath);
+
+	List<Ride> readRides(Path filePath);
+
+	void saveResult(Map<Long, List<Ride>> numberOfRidesToRides, Path filePath);
 }
